@@ -239,7 +239,7 @@ void
 WebkitVideoCapture::saveSnapshot() {
 	QStringList parts = mOutput.split(".");
 	QString filename;
-	filename.sprintf("%s-%05d.%s",parts.value(0),mCurrentFrame,parts.value(1));
+	filename.sprintf("%s-%05d.%s",parts.value(0).toStdStr().c_str(),mCurrentFrame,parts.value(1).toStdStr().c_str());
   QWebFrame *mainFrame = mPage->mainFrame();
   QPainter painter;
   const char* format = NULL;
@@ -623,7 +623,7 @@ main(int argc, char *argv[]) {
     }
   }
 
-   WebkitVideoCapture main(&page, argOut, argDelay,argFps, format, scriptProp, scriptCode);
+   WebkitVideoCapture main(&page, argOut, argDelay,argLength,argFps, format, scriptProp, scriptCode);
 
   app.connect(&page,
     SIGNAL(loadFinished(bool)),
