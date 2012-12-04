@@ -101,7 +101,7 @@ CutyPage::javaScriptAlert(QWebFrame* /*frame*/, const QString& msg) {
     qDebug() << "[alert]" << msg;
 
   if (mAlertString == msg) {
-    QTimer::singleShot(10, mCapt, SLOT(Delayed()));
+    QTimer::singleShot(10, mWebkitVideoCapture, SLOT(Delayed()));
   }
 }
 
@@ -302,7 +302,7 @@ WebkitVideoCapture::saveSnapshot() {
 	mCurrentFrame++;
 	if(mCurrentFrame>=mMaxFrame){
 		timer.stop();
-		this.captureFinished();
+		captureFinished();
 	}
 }
 
