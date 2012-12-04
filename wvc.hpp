@@ -62,7 +62,7 @@ protected:
   QString      mOutput;
   int          mDelay;
 	int 				 mLength;
-	int					 nFps;
+	int					 mFps;
   CutyPage*    mPage;
   OutputFormat mFormat;
   QObject*     mScriptObj;

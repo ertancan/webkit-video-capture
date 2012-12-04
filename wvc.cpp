@@ -219,25 +219,24 @@ WebkitVideoCapture::TryDelayedRender() {
     return;
   }
 
-  timer.setInterval(1000/fps);
+  timer.setInterval(1000/mFps);
 	timer.start();
 }
 
 void
 WebkitVideoCapture::Timeout() {
-	timer.setInterval(1000/fps);
+	timer.setInterval(1000/mFps);
 	timer.start();
 }
 
 void
 WebkitVideoCapture::Delayed() {
-  timer.setInterval(1000/fps);
+  timer.setInterval(1000/mFps);
 	timer.start();
 }
 
 void
 WebkitVideoCapture::saveSnapshot() {
-  cout<<"Saving Snapshot"<<endl;
 	QStringList parts = mOutput.split(".");
 	QString filename = QString("%1-%2.%3").arg(parts.value(0),mCurrentFrame,parts.value(1));
   QWebFrame *mainFrame = mPage->mainFrame();
@@ -623,7 +622,7 @@ main(int argc, char *argv[]) {
     }
   }
 
-   WebkitVideoCapture main(&page, argOut, argDelay, format, scriptProp, scriptCode);
+   WebkitVideoCapture main(&page, argOut, argDelay,argFps format, scriptProp, scriptCode);
 
   app.connect(&page,
     SIGNAL(loadFinished(bool)),
