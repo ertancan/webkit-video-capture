@@ -396,7 +396,7 @@ main(int argc, char *argv[]) {
   const char* argScriptObject = NULL;
   QString argOut;
 
-  WebkitVideoCapture::OutputFormat format = CutyCapt::OtherFormat;
+  WebkitVideoCapture::OutputFormat format = WebkitVideoCapture::OtherFormat;
 
   QApplication app(argc, argv, true);
   CutyPage page;
@@ -471,8 +471,8 @@ main(int argc, char *argv[]) {
     } else if (strncmp("--out", s, nlen) == 0) {
       argOut = value;
 
-      if (format == CutyCapt::OtherFormat)
-        for (int ix = 0; CutyExtMap[ix].id != CutyCapt::OtherFormat; ++ix)
+      if (format == WebkitVideoCapture::OtherFormat)
+        for (int ix = 0; CutyExtMap[ix].id !=  WebkitVideoCapture::OtherFormat; ++ix)
           if (argOut.endsWith(CutyExtMap[ix].extension))
             format = CutyExtMap[ix].id; //, break;
 
@@ -561,11 +561,11 @@ main(int argc, char *argv[]) {
       page.setUserAgent(value);
 
     } else if (strncmp("--out-format", s, nlen) == 0) {
-      for (int ix = 0; CutyExtMap[ix].id != CutyCapt::OtherFormat; ++ix)
+      for (int ix = 0; CutyExtMap[ix].id !=  WebkitVideoCapture::OtherFormat; ++ix)
         if (strcmp(value, CutyExtMap[ix].identifier) == 0)
           format = CutyExtMap[ix].id; //, break;
 
-      if (format == CutyCapt::OtherFormat) {
+      if (format ==  WebkitVideoCapture::OtherFormat) {
         // TODO: error
         argHelp = 1;
         break;
@@ -623,7 +623,7 @@ main(int argc, char *argv[]) {
     }
   }
 
-  CutyCapt main(&page, argOut, argDelay, format, scriptProp, scriptCode);
+   WebkitVideoCapture main(&page, argOut, argDelay, format, scriptProp, scriptCode);
 
   app.connect(&page,
     SIGNAL(loadFinished(bool)),
