@@ -51,22 +51,22 @@ static struct _CutyExtMap {
   const char* extension;
   const char* identifier;
 } const CutyExtMap[] = {
-  { CutyCapt::SvgFormat,         ".svg",        "svg"   },
-  { CutyCapt::PdfFormat,         ".pdf",        "pdf"   },
-  { CutyCapt::PsFormat,          ".ps",         "ps"    },
-  { CutyCapt::InnerTextFormat,   ".txt",        "itext" },
-  { CutyCapt::HtmlFormat,        ".html",       "html"  },
-  { CutyCapt::RenderTreeFormat,  ".rtree",      "rtree" },
-  { CutyCapt::JpegFormat,        ".jpeg",       "jpeg"  },
-  { CutyCapt::PngFormat,         ".png",        "png"   },
-  { CutyCapt::MngFormat,         ".mng",        "mng"   },
-  { CutyCapt::TiffFormat,        ".tiff",       "tiff"  },
-  { CutyCapt::GifFormat,         ".gif",        "gif"   },
-  { CutyCapt::BmpFormat,         ".bmp",        "bmp"   },
-  { CutyCapt::PpmFormat,         ".ppm",        "ppm"   },
-  { CutyCapt::XbmFormat,         ".xbm",        "xbm"   },
-  { CutyCapt::XpmFormat,         ".xpm",        "xpm"   },
-  { CutyCapt::OtherFormat,       "",            ""      }
+  { WebkitVideoCapture::SvgFormat,         ".svg",        "svg"   },
+  { WebkitVideoCapture::PdfFormat,         ".pdf",        "pdf"   },
+  { WebkitVideoCapture::PsFormat,          ".ps",         "ps"    },
+  { WebkitVideoCapture::InnerTextFormat,   ".txt",        "itext" },
+  { WebkitVideoCapture::HtmlFormat,        ".html",       "html"  },
+  { WebkitVideoCapture::RenderTreeFormat,  ".rtree",      "rtree" },
+  { WebkitVideoCapture::JpegFormat,        ".jpeg",       "jpeg"  },
+  { WebkitVideoCapture::PngFormat,         ".png",        "png"   },
+  { WebkitVideoCapture::MngFormat,         ".mng",        "mng"   },
+  { WebkitVideoCapture::TiffFormat,        ".tiff",       "tiff"  },
+  { WebkitVideoCapture::GifFormat,         ".gif",        "gif"   },
+  { WebkitVideoCapture::BmpFormat,         ".bmp",        "bmp"   },
+  { WebkitVideoCapture::PpmFormat,         ".ppm",        "ppm"   },
+  { WebkitVideoCapture::XbmFormat,         ".xbm",        "xbm"   },
+  { WebkitVideoCapture::XpmFormat,         ".xpm",        "xpm"   },
+  { WebkitVideoCapture::OtherFormat,       "",            ""      }
 };
 
 QString
