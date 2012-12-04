@@ -239,7 +239,7 @@ void
 WebkitVideoCapture::saveSnapshot() {
 	QStringList parts = mOutput.split(".");
 	QString filename;
-	filename.sprintf("%s-%05d.%s",parts.value(0).toStdStr().c_str(),mCurrentFrame,parts.value(1).toStdStr().c_str());
+	filename.sprintf("%s-%05d.%s",parts.value(0).toStdString().c_str(),mCurrentFrame,parts.value(1).toStdString().c_str());
   QWebFrame *mainFrame = mPage->mainFrame();
   QPainter painter;
   const char* format = NULL;
@@ -257,7 +257,7 @@ WebkitVideoCapture::saveSnapshot() {
   // check for other events... This is primarily a problem
   // under my Ubuntu virtual machine.
 
-  mPage->setViewportSize( mainFrame->contentsSize() );
+  //mPage->setViewportSize( mainFrame->contentsSize() );
 
   switch (mFormat) {
     case SvgFormat: {
