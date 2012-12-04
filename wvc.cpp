@@ -31,7 +31,7 @@
 #include <QTimer>
 #include <QByteArray>
 #include <QNetworkRequest>
-#include "CutyCapt.hpp"
+#include "wvc.hpp"
 
 #if QT_VERSION >= 0x040600 && 0
 #define CUTYCAPT_SCRIPT 1
@@ -47,7 +47,7 @@
 #endif
 
 static struct _CutyExtMap {
-  CutyCapt::OutputFormat id;
+  WebkitVideoCapture::OutputFormat id;
   const char* extension;
   const char* identifier;
 } const CutyExtMap[] = {
@@ -101,7 +101,7 @@ CutyPage::javaScriptAlert(QWebFrame* /*frame*/, const QString& msg) {
     qDebug() << "[alert]" << msg;
 
   if (mAlertString == msg) {
-    QTimer::singleShot(10, mCutyCapt, SLOT(Delayed()));
+    QTimer::singleShot(10, mCapt, SLOT(Delayed()));
   }
 }
 
@@ -316,7 +316,7 @@ void
 CaptHelp(void) {
   printf("%s",
     " -----------------------------------------------------------------------------\n"
-    " Usage: CutyCapt --url=http://www.example.org/ --out=localfile.png            \n"
+    " Usage: wvc --url=http://www.example.org/ --out=localfile.png            \n"
     " -----------------------------------------------------------------------------\n"
     "  --help                         Print this help page and exit                \n"
     "  --url=<url>                    The URL to capture (http:...|file:...|...)   \n"
@@ -396,7 +396,7 @@ main(int argc, char *argv[]) {
   const char* argScriptObject = NULL;
   QString argOut;
 
-  CutyCapt::OutputFormat format = CutyCapt::OtherFormat;
+  WebkitVideoCapture::OutputFormat format = CutyCapt::OtherFormat;
 
   QApplication app(argc, argv, true);
   CutyPage page;
